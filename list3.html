@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>IBuy</title>
+  <link rel="icon" href="favicon.png" type="image/x-icon">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="w3.css">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+.w3-quarter img{margin-bottom: -6px; cursor: pointer}
+.w3-quarter img:hover{opacity: 0.6; transition: 0.3s}
+</style>
+<script>try {
+                        Object.defineProperty(screen, "availTop", { value: 0 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(screen, "availLeft", { value: 0 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(screen, "availWidth", { value: 1366 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(screen, "availHeight", { value: 768 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(screen, "colorDepth", { value: 24 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(screen, "pixelDepth", { value: 24 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(navigator, "keyboard", { value: undefined });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(navigator, "hardwareConcurrency", { value: 8 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(navigator, "webkitTemporaryStorage", { value: undefined });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(navigator, "webkitPersistentStorage", { value: undefined });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(navigator, "appVersion", { value: "5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36" });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(navigator, "doNotTrack", { value: null });
+                    } catch (e) {}
+                    
+                navigator.getBattery = function getBattery () {
+                let battery = {"charging":true,"chargingTime":0,"dischargingTime":null,"level":1}
+            
+                try {
+                    Object.defineProperty(battery, 'onchargingchange', {
+                        enumerable: true,
+                        configurable: false,
+                        writable: false,
+                        value: undefined
+                    })
+                } catch (e) {}
+                
+                try {
+                    Object.defineProperty(battery, 'onchargingtimechange', {
+                        enumerable: true,
+                        configurable: false,
+                        writable: false,
+                        value: undefined
+                    })
+                } catch (e) {}
+                
+                try {
+                    Object.defineProperty(battery, 'ondischargingtimechange', {
+                        enumerable: true,
+                        configurable: false,
+                        writable: false,
+                        value: undefined
+                    })
+                } catch (e) {}
+                
+                try {
+                    Object.defineProperty(battery, 'onlevelchange', {
+                        enumerable: true,
+                        configurable: false,
+                        writable: false,
+                        value: undefined
+                    })
+                } catch (e) {}
+                
+                    battery.addEventListener = function addEventListener () {
+                        return
+                    }
+                
+                return Promise.resolve(battery)
+                }
+            
+            try {
+                window.screenY = 0
+            } catch (e) { }
+        
+            try {
+                window.screenTop = 0
+            } catch (e) { }
+        
+            try {
+                window.top.window.outerHeight = 0
+            } catch (e) { }
+        
+            try {
+                window.screenX = 0
+            } catch (e) { }
+        
+            try {
+                window.screenLeft = 0
+            } catch (e) { }
+        
+            try {
+                window.top.window.outerWidth = 0
+            } catch (e) { }
+        </script><script data-dapp-detection="">
+(function() {
+  let alreadyInsertedMetaTag = false
+
+  function __insertDappDetected() {
+    if (!alreadyInsertedMetaTag) {
+      const meta = document.createElement('meta')
+      meta.name = 'dapp-detected'
+      document.head.appendChild(meta)
+      alreadyInsertedMetaTag = true
+    }
+  }
+
+  if (window.hasOwnProperty('web3')) {
+    window.__disableDappDetectionInsertion = true
+    if (window.web3 === undefined) {
+      return
+    }
+    __insertDappDetected()
+  } else {
+    var oldWeb3 = window.web3
+    Object.defineProperty(window, 'web3', {
+      configurable: true,
+      set: function (val) {
+        if (!window.__disableDappDetectionInsertion)
+          __insertDappDetected()
+        oldWeb3 = val
+      },
+      get: function () {
+        if (!window.__disableDappDetectionInsertion)
+          __insertDappDetected()
+        return oldWeb3
+      }
+    })
+  }
+})()</script></head><body class="w3-light-grey">
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-animate-right w3-top w3-text-light-grey w3-large" style="z-index: 3; width: 250px; font-weight: bold; display: none; right: 0px;" id="mySidebar">
+  <a href="javascript:void()" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-32">CLOSE</a> 
+  <a href="index.html" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">HOME</a> 
+  <a href="contact.html" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">BUY</a> 
+  <a href="login.html" onclick="w3_close()" class="w3-bar-item w3-button w3-center w3-padding-16">LOGIN</a>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-white w3-xlarge w3-padding-16">
+  <span class="w3-left w3-padding">IBuy</span>
+  <a href="javascript:void(0)" class="w3-right w3-button w3-white" onclick="w3_open()">☰</a>
+</header>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main w3-content" style="max-width:1600px">
+  <div class="w3-container" style="padding:50px 16px" id="team">
+  <div class="w3-row-padding w3-grayscale" style="margin-top:64px">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <img src="laptop.jpg" alt="Laptop" style="width:100%">
+        <div class="w3-container">
+          <h3>Laptops</h3>
+          <p class="w3-opacity">Crown, Inc.</p>
+          <p>Buy the most popular laptop brand.</p>
+          <p><a href="contact.html"><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i>Buy</button></a></p>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <img src="history.jpg" alt="history" style="width:100%">
+        <div class="w3-container">
+          <h3>Big History WW2 book</h3>
+          <p class="w3-opacity">Big History, Inc.</p>
+          <p>Buy Big History books.</p>
+          <p><a href="contact.html"><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i>Buy</button></a></p>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <img src="camera.jpg" alt="Cameras" style="width:100%">
+        <div class="w3-container">
+          <h3>Cameras</h3>
+          <p class="w3-opacity">Crown, Inc.</p>
+          <p>Get cameras now.</p>
+          <p><a href="contact.html"><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i>Buy</button></a></p>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <img src="cards.jpg" alt="Cards" style="width:100%">
+        <div class="w3-container">
+          <h3>Speed Cards</h3>
+          <p class="w3-opacity">Crown, Inc.</p>
+          <p>Buy and trade with your friends.</p>
+          <p><a href="contact.html"><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i>Buy</button></a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main w3-content" style="max-width:1600px">
+<div class="w3-container" style="padding:50px 16px" id="team">
+<div class="w3-row-padding w3-grayscale" style="margin-top:64px">
+  <div class="w3-col l3 m6 w3-margin-bottom">
+    <div class="w3-card">
+      <img src="laptop.jpg" alt="Laptop" style="width:100%">
+      <div class="w3-container">
+        <h3>Notebooks</h3>
+        <p class="w3-opacity">Crown, Inc.</p>
+        <p>Notebooks - available from Elijah Brackett.</p>
+        <p><a href="contact.html"><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i>Buy</button></a></p>
+      </div>
+    </div>
+  </div>
+  <div class="w3-col l3 m6 w3-margin-bottom">
+    <div class="w3-card">
+      <img src="desktop.jpg" alt="Desktop" style="width:100%">
+      <div class="w3-container">
+        <h3>Desktops</h3>
+        <p class="w3-opacity">Crown, Inc.</p>
+        <p>Not want a laptop? Get desktops.</p>
+        <p><a href="contact.html"><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i>Buy</button></a></p>
+      </div>
+    </div>
+  </div>
+  <div class="w3-col l3 m6 w3-margin-bottom">
+    <div class="w3-card">
+      <img src="phone.jpg" alt="Phones" style="width:100%">
+      <div class="w3-container">
+        <h3>Phones</h3>
+        <p class="w3-opacity">Crown, Inc.</p>
+        <p>.</p>
+        <p><a href="contact.html"><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i>Buy</button></a></p>
+      </div>
+    </div>
+  </div>
+  <div class="w3-col l3 m6 w3-margin-bottom">
+    <div class="w3-card">
+      <img src="" alt="Empty" style="width:100%">
+      <div class="w3-container">
+        <h3></h3>
+        <p class="w3-opacity"></p>
+        <p></p>
+        <p><a href="contact.html"><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i>Buy</button></a></p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+  <!-- Pagination -->
+  <div class="w3-center w3-padding-32">
+    <div class="w3-bar">
+        <a href="index.html" class="w3-bar-item w3-button w3-hover-black">1</a>
+      <a href="list2.html" class="w3-bar-item w3-button w3-hover-black">2</a>
+      <a href="list3.html" class="w3-bar-item w3-black w3-button">3</a>
+
+      <a href="list4.html" class="w3-bar-item w3-button w3-hover-black">4</a>
+    </div>
+  </div>
+    
+  <div class="w3-black w3-center w3-padding-24">Copyright by <a href="https://noahti.github.io/ibuy" title="W3.CSS" target="_blank" class="w3-hover-opacity">IBuy</a></div>
+
+<!-- End page content -->
+</div>
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+
+</script>
+
+
+
+</body></html>
